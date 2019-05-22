@@ -8,14 +8,23 @@ layout: default
     <div class="posts">
       {% for post in paginator.posts %}
         <div class="post py3">
-          <p class="post-meta">
-	    {% if site.date_format %}
-              Posted on {{ post.date | date: site.date_format }}
-	    {% else %}
-              Posted on {{ post.date | date: "%B %-d, %Y" }}
-	    {% endif %}
-	  </p>
+          
           <a href="{{ post.url | relative_url }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          
+          {% if post.subtitle %}
+              <h3 class="post-subtitle">
+                {{ post.subtitle }}
+              </h3>
+          {% endif %}
+
+          <p class="post-meta">
+            {% if site.date_format %}
+              Posted on {{ post.date | date: site.date_format }}
+            {% else %}
+              Posted on {{ post.date | date: "%B %-d, %Y" }}
+            {% endif %}
+          </p>
+
           <span class="post-summary">
             {% if post.summary %}
               {{ post.summary }}
