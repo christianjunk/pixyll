@@ -110,6 +110,14 @@ text:
   thanks: 'Thanks for contacting us. We will reply as soon as possible.'
   og_locale: 'en_US'
 
+# jekyll-scholar settings
+scholar:
+  style: apa
+  source: _bibliography
+  bibliography: references.bib
+  replace_strings: true
+  query: "@*"
+
 # Build settings
 markdown:     kramdown
 redcarpet:
@@ -121,6 +129,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll/scholar
 # https://github.com/jekyll/jekyll/issues/2938
 exclude:
   - Gemfile
